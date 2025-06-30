@@ -1,0 +1,28 @@
+
+services:
+  postgres-driving-trucker:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: abdizo
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: driving-school
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+  backend-springboot-1:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    depends_on:
+        - postgres-driving-trucker
+        
+  frontend-react-1:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-springboot-1
+volumes:
+  postgres-db:
+    driver: local        
