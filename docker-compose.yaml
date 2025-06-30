@@ -18,7 +18,7 @@ services:
         - postgres-driving-trucker
         
   frontend-react-1:
-    build: ./frontend
+    build: ./frontend/driving-lessons-trucker
     ports:
       - "3000:3000"
     depends_on:
