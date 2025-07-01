@@ -1,6 +1,5 @@
-
 # Build the react app 
-FROM node:24.3 AS build
+FROM node:24-alpine AS build
 WORKDIR /app
 
 # Copy dependeny and install
@@ -11,7 +10,8 @@ RUN npm install
 COPY . .
 RUN npm run build
  
- FROM nginx:1.28-alpine
- COPY --from=build /app/dist/ /usr/share/nginx/html 
- EXPOSE 80
- CMD [ "nginx", "-g", "daemon off;" ]
+ 
+FROM nginx:1.28-alpine
+COPY --from=build /app/dist/ /usr/share/nginx/html 
+EXPOSE 80
+CMD [ "nginx", "-g", "daemon off;" ]
