@@ -1,6 +1,6 @@
 
 # Build the react app 
-FROM node:24-alpine AS build
+FROM node:24.3 AS build
 WORKDIR /app
 
 # Copy dependeny and install
