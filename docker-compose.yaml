@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_USER: abdizo
       POSTGRES_PASSWORD: password123
-      POSTGRES_DB: driving-school
+      POSTGRES_DB: driving_school
     ports:
       - "5432:5432"
     volumes:
@@ -20,7 +20,7 @@ services:
   frontend-react-1:
     build: ./frontend/driving-lessons-trucker
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend-springboot-1
 volumes:
