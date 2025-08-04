@@ -17,12 +17,12 @@ jobs:
         uses: action/setup-java@v4
         with:
           distribution: 'OpenJDK'
-          java-version: 17
+          java-version: 21
 
       - name: Unit Test
         run: mvn -B test --file pom.xml
 
       - name: Build the application
-        run:
+        run: |
           mvn clean
           mvn -B package --file pom.xml
