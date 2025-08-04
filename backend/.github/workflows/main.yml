@@ -1,0 +1,28 @@
+name: driving-lesson-project
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  build-deploy:
+    name: Build and deploy spring bott app
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+
+      - name: Setup JDK 21
+        uses: action/setup-java@v4
+        with:
+          distribution: 'OpenJDK'
+          java-version: 17
+
+      - name: Unit Test
+        run: mvn -B test --file pom.xml
+
+      - name: Build the application
+        run:
+          mvn clean
+          mvn -B package --file pom.xml
