@@ -6,6 +6,7 @@ import com.abdikhafar.drivinglessontrucker.mapper.StudentTaskMapper;
 import com.abdikhafar.drivinglessontrucker.model.Student;
 import com.abdikhafar.drivinglessontrucker.model.StudentTask;
 import com.abdikhafar.drivinglessontrucker.model.Task;
+import com.abdikhafar.drivinglessontrucker.repository.StudentRepository;
 import com.abdikhafar.drivinglessontrucker.repository.StudentTaskRepository;
 import com.abdikhafar.drivinglessontrucker.repository.TaskRepository;
 import org.springframework.stereotype.Service;
