@@ -1,7 +1,6 @@
 package com.abdikhafar.drivinglessontrucker.model;
 
 import jakarta.persistence.*;
-        import lombok.*;
 
 import java.time.LocalDate;
 
