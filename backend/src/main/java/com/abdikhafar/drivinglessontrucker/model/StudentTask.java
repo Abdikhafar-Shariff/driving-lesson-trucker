@@ -75,5 +75,16 @@ public class StudentTask {
     public void setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus;
     }
+
+    @Override
+    public String toString() {
+        return "StudentTask{" +
+                "id=" + id +
+                ", student=" + student +
+                ", task=" + task +
+                ", startDate=" + startDate +
+                ", taskStatus=" + taskStatus +
+                '}';
+    }
 }
 
