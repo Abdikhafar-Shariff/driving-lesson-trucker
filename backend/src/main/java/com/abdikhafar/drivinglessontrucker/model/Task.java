@@ -4,11 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +14,46 @@ public class Task {
     private Exercise exercise;
     @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
+
+    public Task() {
+    }
+
+    public Task(Long taskId, String description, Exercise exercise, TaskStatus taskStatus) {
+        this.taskId = taskId;
+        this.description = description;
+        this.exercise = exercise;
+        this.taskStatus = taskStatus;
+    }
+
+    public Long getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(Long taskId) {
+        this.taskId = taskId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Exercise getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
+    }
+
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(TaskStatus taskStatus) {
+        this.taskStatus = taskStatus;
+    }
 }
