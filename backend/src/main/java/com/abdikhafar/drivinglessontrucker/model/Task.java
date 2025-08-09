@@ -55,4 +55,14 @@ public class Task {
     public void setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "taskId=" + taskId +
+                ", description='" + description + '\'' +
+                ", exercise=" + exercise +
+                ", taskStatus=" + taskStatus +
+                '}';
+    }
 }
