@@ -69,4 +69,15 @@ public class Student {
     public void setStudentTasks(List<StudentTask> studentTasks) {
         this.studentTasks = studentTasks;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", studentTasks=" + studentTasks +
+                '}';
+    }
 }
