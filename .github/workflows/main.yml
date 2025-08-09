@@ -33,9 +33,11 @@ jobs:
 
       - name: Build Docker Image
         uses: docker/build-push-action@v6
-        working-directory: ./backend
         with:
-          context: ./backend
+          context: ./backend/
           file: ./backend/Dockerfile
           push: true
           tags: ${{secrets.SPRINGBOOT_DOCKER_TAG}}
+
+
+        
