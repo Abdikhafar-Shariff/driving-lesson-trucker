@@ -47,4 +47,13 @@ public class Exercise {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
+
+    @Override
+    public String toString() {
+        return "Exercise{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", tasks=" + tasks +
+                '}';
+    }
 }
